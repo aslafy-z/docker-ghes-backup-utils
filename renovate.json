@@ -6,7 +6,7 @@
         "^version\\.env$"
       ],
       "matchStrings": [
-        "ARG GHES_BACKUP_UTILS_VERSION=\"(?<currentValue>.*)\"\\n"
+        "GHES_BACKUP_UTILS_VERSION=(?<currentValue>.*)\\n"
       ],
       "datasourceTemplate": "github-releases",
       "packageNameTemplate": "github/backup-utils",

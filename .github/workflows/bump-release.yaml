@@ -27,7 +27,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: ${{ steps.tag_version.outputs.new_tag != 'undefined' }}
         with:
-          name: Release ${{ steps.tag_version.outputs.new_tag }}
+          name: ${{ steps.tag_version.outputs.new_tag }}
           tag_name: ${{ steps.tag_version.outputs.new_tag }}
           target_commitish: ${{ github.sha }}
           generate_release_notes: true
