@@ -8,6 +8,7 @@ on:
 jobs:
   bump-release:
     runs-on: ubuntu-latest
+    concurrency: bump-release
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
