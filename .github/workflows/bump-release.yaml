@@ -17,10 +17,10 @@ jobs:
 
       - name: Bump version and push tag
         id: tag_version
-        uses: mathieudutour/github-tag-action@v6.0
+        uses: rickstaa/action-create-tag@v1
         with:
-          custom_tag: ${{ env.GHES_BACKUP_UTILS_VERSION }}
-          tag_prefix: ''
+          tag: ${{ env.GHES_BACKUP_UTILS_VERSION }}
+          force_push_tag: true
           github_token: ${{ secrets.PAT_TOKEN }}
 
       - name: Release
