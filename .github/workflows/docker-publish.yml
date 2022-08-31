@@ -64,11 +64,11 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          flavor: |
+            latest=false
           tags: |
-            type=ref,event=pr
-            type=ref,event=tag
-            type=ref,event=branch,enable=false
             type=raw,value=latest
+            type=raw,value=${{ env.GHES_BACKUP_UTILS_VERSION }}
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
