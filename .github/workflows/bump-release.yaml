@@ -25,10 +25,9 @@ jobs:
 
       - name: Release
         uses: softprops/action-gh-release@v1
-        if: ${{ steps.tag_version.outputs.new_tag != 'undefined' }}
         with:
-          name: ${{ steps.tag_version.outputs.new_tag }}
-          tag_name: ${{ steps.tag_version.outputs.new_tag }}
+          name: ${{ env.GHES_BACKUP_UTILS_VERSION }}
+          tag_name: ${{ env.GHES_BACKUP_UTILS_VERSION }}
           target_commitish: ${{ github.sha }}
           generate_release_notes: true
           token: ${{ secrets.PAT_TOKEN }}
