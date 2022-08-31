@@ -67,7 +67,6 @@ jobs:
           flavor: |
             latest=false
           tags: |
-            type=raw,value=latest
             type=raw,value=${{ env.GHES_BACKUP_UTILS_VERSION }}
 
       - name: Set up QEMU
