@@ -37,5 +37,5 @@ jobs:
           target_commitish: ${{ github.sha }}
           generate_release_notes: false
           body: |
-            **Full Changelog**: https://github.com/github/backup-utils/releases/tag/${{ env.GHES_BACKUP_UTILS_VERSION }}
+            See original release at https://github.com/github/backup-utils/releases/tag/${{ env.GHES_BACKUP_UTILS_VERSION }}
           token: ${{ secrets.PAT_TOKEN }}
