@@ -24,7 +24,7 @@ env:
   PLATFORMS: linux/amd64,linux/arm64
 
 jobs:
-  build:
+  docker-publish:
     runs-on: ubuntu-latest
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
