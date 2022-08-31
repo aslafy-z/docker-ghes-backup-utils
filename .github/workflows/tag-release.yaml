@@ -35,5 +35,7 @@ jobs:
           name: ${{ env.GHES_BACKUP_UTILS_VERSION }}
           tag_name: ${{ env.GHES_BACKUP_UTILS_VERSION }}
           target_commitish: ${{ github.sha }}
-          generate_release_notes: true
+          generate_release_notes: false
+          body: |
+            **Full Changelog**: https://github.com/github/backup-utils/releases/tag/${{ env.GHES_BACKUP_UTILS_VERSION }}
           token: ${{ secrets.PAT_TOKEN }}
