@@ -37,5 +37,7 @@ jobs:
           target_commitish: ${{ github.sha }}
           generate_release_notes: false
           body: |
-            See original release at https://github.com/github/backup-utils/releases/tag/${{ env.GHES_BACKUP_UTILS_VERSION }}
+            See original release at <https://github.com/github/backup-utils/releases/tag/${{ env.GHES_BACKUP_UTILS_VERSION }}>
+
+            Docker image available with: `docker pull ${{ github.repository_owner }}/ghes-backup-utils:${{ env.GHES_BACKUP_UTILS_VERSION }}`
           token: ${{ secrets.PAT_TOKEN }}
