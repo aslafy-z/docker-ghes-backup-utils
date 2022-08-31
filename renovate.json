@@ -1,0 +1,37 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "regexManagers": [
+    {
+      "fileMatch": [
+        "^version\\.env$"
+      ],
+      "matchStrings": [
+        "ARG GHES_BACKUP_UTILS_VERSION=\"(?<currentValue>.*)\"\\n"
+      ],
+      "datasourceTemplate": "github-releases",
+      "packageNameTemplate": "github/backup-utils",
+      "versioningTemplate": "semver"
+    }
+  ],
+  "packageRules": [
+    {
+      "packagePatterns": ["*"],
+      "enabled": false
+    },
+    {
+      "packageNames": ["github/backup-utils"],
+      "enabled": true
+    }
+  ],
+  "extends": [
+    "config:base",
+    ":semanticCommits",
+    ":semanticCommitTypeAll(deps)",
+    ":semanticCommitScopeDisabled",
+    ":disableDependencyDashboard"
+  ],
+  "labels": [
+    "dependencies",
+    "automerge"
+  ]
+}
