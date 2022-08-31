@@ -11,7 +11,9 @@ on:
 jobs:
   auto-merge:
     runs-on: ubuntu-latest
-    concurrency: auto-merge
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: false
     permissions:
       pull-requests: write
       contents: write

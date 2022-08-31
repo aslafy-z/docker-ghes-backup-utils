@@ -9,7 +9,9 @@ on:
 jobs:
   bump-release:
     runs-on: ubuntu-latest
-    concurrency: bump-release
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: false
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
