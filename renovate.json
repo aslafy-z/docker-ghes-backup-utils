@@ -15,11 +15,11 @@
   ],
   "packageRules": [
     {
-      "packagePatterns": ["*"],
+      "matchPackagePatterns": ["*"],
       "enabled": false
     },
     {
-      "packageNames": ["github/backup-utils"],
+      "matchPackageNames": ["github/backup-utils"],
       "enabled": true
     }
   ],
@@ -31,7 +31,6 @@
     ":disableDependencyDashboard"
   ],
   "labels": [
-    "dependencies",
     "automerge"
   ]
 }
