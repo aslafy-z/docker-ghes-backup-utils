@@ -9,7 +9,7 @@
         "GHES_BACKUP_UTILS_VERSION=(?<currentValue>.*)\\n"
       ],
       "datasourceTemplate": "github-releases",
-      "packageNameTemplate": "github/backup-utils",
+      "depNameTemplate": "github/backup-utils",
       "versioningTemplate": "semver"
     }
   ],
