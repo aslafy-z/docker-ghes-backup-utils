@@ -1,4 +1,4 @@
-name: Bump and release
+name: Tag and release
 
 on:
   workflow_dispatch:
@@ -7,7 +7,7 @@ on:
       - main
 
 jobs:
-  bump-release:
+  tag-release:
     runs-on: ubuntu-latest
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
@@ -21,7 +21,7 @@ jobs:
       - name: Retrieve github/backup-utils version to build
         run: cat version.env >> $GITHUB_ENV
 
-      - name: Bump version and push tag
+      - name: Tag version
         id: tag_version
         uses: rickstaa/action-create-tag@v1
         with:
