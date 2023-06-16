@@ -22,7 +22,7 @@ jobs:
       - name: Enable PR auto-merge
         run: |
           # Skip if PR is already closed
-          test "$(gh pr view $PR_NUMBER --json=closed --jq '.closed')" = "true" && exit 0
+          gh pr view $PR_NUMBER --json=closed --jq '.closed' | grep -q true || \
           gh pr merge --auto --squash "$PR_NUMBER"
         env:
           PR_NUMBER: ${{ github.event.pull_request.number }}
